@@ -54,6 +54,7 @@
     background-position: 50% 100%;
     transform: translate3d(100%, 0, 0);
     transition: 1s;
+    color: white;
 }
 
 .door-opened .door-front{
@@ -65,15 +66,17 @@
 }
 
 .door:nth-child(1) .ilbuni {
-    background-image: url(./images/ilbuni_0.png);
+    background-image: url(./images/cig_1.png);
 }
 
 .door:nth-child(2) .ilbuni {
-    background-image: url(./images/ilbuni_1.png);
+    background-image: url(./images/cig_2.png);
 }
 
 .door:nth-child(3) .ilbuni {
-    background-image: url(./images/ilbuni_2.png);
+    background-image: url(./images/cig_3.png);
 }
 
+
+.filter-1 {-webkit-filter: sepia(.5) hue-rotate(-30deg) saturate(1.4);filter: sepia(.5) hue-rotate(-30deg) saturate(1.4);}
 

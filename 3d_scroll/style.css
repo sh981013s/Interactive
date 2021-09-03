@@ -1,0 +1,104 @@
+/* general */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 500vw;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-overflow-scrolling: touch;
+    color: #555;
+    background: #fff000;
+}
+
+/* main screen */
+
+.world {
+    position: fixed;
+    /* 창이 아래로 내려가는 것이 아닌
+       그대로에서 앞으로만 가기 때문에 고정. */
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    perspective: 100px 
+    /* 공간 자체를 3d로 전환 */
+}
+
+.stage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transform-style: preserve-3d;
+    /* 실제로 3d 효과가 되야할 객체들은 중간에 걸친 element 에 해당 style 이 필요하다. */
+}
+
+.house {
+    width: 100vw;
+    height: 100vh;
+    transform: translateZ(-490vw);
+    transform-style: preserve-3d;
+}
+
+.wall {
+    position: absolute;
+    /* 내용물을 포갠 상태로 z-index 값을 조정하여 앞으로 끄집어내야하기 때문에 absolute */
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.wall-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.wall-title {
+    font-size: 5rem;
+}
+
+.wall-left {
+    /* left: -500vw; */
+    width: 1000vw;
+    background: #f8f8f8;
+    transform: rotateY(90deg) translateZ(-500vw);
+}
+
+.wall-right {
+    /* left: -500vw; */
+    width: 1000vw;
+    background: #f8f8f8;
+    transform: rotateY(90deg) translateZ(-400vw);
+}
+
+.wall-front-a { transform: translateZ(300vw); }
+.wall-front-b { transform: translateZ(50vw); }
+.wall-front-c { transform: translateZ(-200vw); }
+.wall-front-d { transform: translateZ(-500vw); }
+
+/* progress bar */
+
+.progress-bar-con {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100vw;
+    height: 5px;
+    background: #555;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    background: #00a8ff;
+}
