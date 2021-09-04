@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: hsla(0, 0%, 0%, 0.447);
+}
+
+.door {
+    position: relative;
+    width: 100px;
+    height: 161px;
+    margin-right: 10px;
+}
+
+.door-front {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-image: url('./images/door.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    transform-origin: left;
+    transition: 1s;
+}
+
+.door-inside {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+}
+
+.ilbuni {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    transform: translate3d(100%, 0, 0);
+    transition: 1s;
+    color: white;
+}
+
+.door-opened .door-front{
+    transform: perspective(800px) rotateY(-110deg);
+}
+
+.door-opened .ilbuni {
+    transform: translate3d(0, 0, 0);
+}
+
+.door:nth-child(1) .ilbuni {
+    background-image: url(./images/cig_1.png);
+}
+
+.door:nth-child(2) .ilbuni {
+    background-image: url(./images/cig_2.png);
+}
+
+.door:nth-child(3) .ilbuni {
+    background-image: url(./images/cig_3.png);
+}
+
+
+.filter-1 {-webkit-filter: sepia(.5) hue-rotate(-30deg) saturate(1.4);filter: sepia(.5) hue-rotate(-30deg) saturate(1.4);}
+
